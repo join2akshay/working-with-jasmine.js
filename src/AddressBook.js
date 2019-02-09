@@ -1,6 +1,7 @@
 function AddressBook()
 {
     this.contacts=[];
+    this.initialComplete=false;
 }
 AddressBook.prototype.addContact = function(contact)
 {
@@ -14,3 +15,13 @@ AddressBook.prototype.deleteContact = function(index)
 {
     return this.contacts.splice(index,1);
 };
+AddressBook.prototype.getInitialContact = function (cb) {
+    var self = this;
+    setTimeout(function(){
+        self.initialComplete = true;
+        if (cb)
+        {
+            return cb();
+        }
+    },3);
+}  

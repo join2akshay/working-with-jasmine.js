@@ -20,3 +20,11 @@ describe("AddressBook",function(){
         expect(addressBook.getContact(0)).not.toBeDefined();
     });
 });
+
+describe("Async Test",function(){
+    var addressBook= new AddressBook();
+    it("should grab initail value",function(){
+        addressBook.getInitialContact();
+        expect(addressBook.getIntialContact).toBe(true);
+    });
+});
